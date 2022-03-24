@@ -1,0 +1,66 @@
+
+// getting prev value
+buttonRed.addEventListener("click",()=>{
+    prevRed.unshift(buttonRed.value);
+})
+buttonBlue.addEventListener("click",()=>{
+    prevBlue.unshift(buttonBlue.value);
+})
+buttonGreen.addEventListener("click",()=>{
+    prevRed.unshift(buttonGreen.value);
+})
+
+var prevRed =[];
+var prevGreen =[];
+var prevBlue =[];
+
+function makeRed(){
+    if(scannedImage){
+        dataFromScan=scannedImage.data;
+        for(var i=0; i < dataFromScan.length; i+=4){
+            const total = dataFromScan[i]+dataFromScan[i+1]+ dataFromScan[i+2];
+            const avarage = total/3;
+            if(parseInt(prevRed[1]) < buttonRed.value){
+                dataFromScan[i]=avarage - buttonRed.value; //red
+            } else if(parseInt(prevRed[1]) > buttonRed.value){
+                dataFromScan[i]=avarage + buttonRed.value; //red
+            } else {
+                
+            }
+        }
+        scannedImage.data = dataFromScan;
+        context.putImageData(scannedImage, 0, 0);
+    }
+}
+function makeGreen(){
+    if(scannedImage){
+        dataFromScan=scannedImage.data;
+        for(var i=0; i < dataFromScan.length; i+=4){
+            const total = dataFromScan[i]+dataFromScan[i+1]+ dataFromScan[i+2];
+            const avarage = total/3;
+            if(parseInt(prevGreen[1]) < buttonGreen.value){
+                dataFromScan[i+1]=avarage - buttonGreen.value; //green
+            } else if(parseInt(prevGreen[1]) > buttonGreen.value){
+                dataFromScan[i+1]=avarage + buttonGreen.value; //green
+            }
+        }
+        scannedImage.data = dataFromScan;
+        context.putImageData(scannedImage, 0, 0);
+    }
+}
+function makeBlue(){
+    if(scannedImage){
+        dataFromScan=scannedImage.data;
+        for(var i=0; i < dataFromScan.length; i+=4){
+            const total = dataFromScan[i]+dataFromScan[i+1]+ dataFromScan[i+2];
+            const avarage = total/3;
+            if(parseInt(prevBlue[1]) < buttonBlue.value){
+                dataFromScan[i+2]=avarage - buttonBlue.value; //Blue
+            } else if(parseInt(prevBlue[1]) > buttonBlue.value){
+                dataFromScan[i+2]=avarage + buttonBlue.value; //Blue
+            }
+        }
+        scannedImage.data = dataFromScan;
+        context.putImageData(scannedImage, 0, 0);
+    }
+}

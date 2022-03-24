@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- my css -->
+    <link rel="stylesheet" href="style/css/src/index.css">
+    <title>Home || ImageX</title>
+</head>
+<body style="background-color: white;">
+    <div class="flex-wrap vw-100 vh-100 d-flex justify-content-evenly align-items-center">
+        <div class="d-flex flex-column justify-content-center">
+            <canvas crossorigin="anonymous" width="500" height="500" id="canvas"></canvas>
+            <input id="openIMG" type="file" accept="image/*">
+        </div>
+        <div class="w-50 flex-row d-flex justify-content-evenly align-items-center">
+            <div class="w-25 h-50 d-flex flex-column justify-content-center">
+                <div>
+                    <div>
+                        red:
+                        <input value="0"  max="255" min="-255" type="range" id="red">
+                    </div>
+                    <div>
+                        green:
+                        <input value="0"  max="255" min="-255" type="range" id="green">
+                    </div>
+                    <div>
+                        blue:
+                        <input value="0" max="255" min="-255" type="range" id="blue">
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div>
+                        brightness:
+                        <input value="0" max="100" min="-100" type="range" id="brightness">
+                    </div>
+                    <div>
+                        saturation:
+                        <input value="0" max="100" min="-100" type="range" id="saturation">
+                    </div>
+                </div>
+            </div>
+            <div class="w-25 h-50 d-flex flex-column justify-content-center">
+                <span>
+                    zoom:
+                    <input class="bg-danger" value="0" type="text" id="zoom">
+                </span>
+                <div class="my-2 d-flex justify-content-evenly">
+                    <button class="bg-danger" id="undo">undo</button>
+                    <button class="bg-danger" id="redo">redo</button>
+                    <button class="bg-danger" id="blur">blur</button>
+                </div>
+                <div class="my-2 d-flex justify-content-evenly">
+                    <button class="bg-success" id="gray">gray</button>
+                    <button class="bg-success" id="noise">film</button>
+                    <button class="bg-success" id="sepia">sepia</button>
+                    <button class="bg-success" id="invert">invert</button>
+                </div>
+                <div class="my-2 d-flex justify-content-evenly">
+                    <button class="bg-success" id="funny">funny</button>
+                    <button class="bg-success" id="funnyTwo">funny Two</button>
+                    <button class="bg-success" id="funnyThree">funny Three</button>
+                </div>
+                <div class="my-2 d-flex justify-content-evenly">
+                    <button class="bg-success" id="fall">fall</button>
+                    <button class="bg-success" id="summer">summer</button>
+                    <button class="bg-success" id="winter">winter</button>
+                </div>
+                <div class="my-2 d-flex justify-content-evenly">
+                    <button class="bg-success" id="restart">restart</button>
+                    <button class="bg-warning"id="export">export</button>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <script src="script/src/index.js"></script>
+    <script src="script/src/color.js"></script>
+</body>
+</html>

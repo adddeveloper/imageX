@@ -1,0 +1,63 @@
+body{
+    background-color: #313131;
+}
+
+.overflow-hidden{
+    overflow: hidden;
+}
+
+.side-one{
+    left: 0;
+}
+.side-two{
+    left: 0;
+    bottom: 0;
+}
+canvas{
+    border: solid 2px black;
+}
+
+#canvas{
+    margin: 0 auto 0 auto !important;
+    padding: 0 !important;
+}
+.workspace{
+    width: 792px;
+    height: 650px;
+    overflow: scroll;
+    margin: 0 !important;
+}
+.border-left-right-1{
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+}
+::-webkit-scrollbar-track{
+    width: 15px;
+    height: 15px;
+}
+
+/* scroll bar */
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 7px;
+}
+::-webkit-scrollbar-button {
+    background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 20px 10px;
+    background: #000; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(200, 200, 200);
+}
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+::-webkit-scrollbar-corner {
+    background: transparent; 
+}
+::-webkit-resizer {
+    background: transparent; 
+}
